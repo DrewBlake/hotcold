@@ -6,6 +6,7 @@ export default function NumberInput(props) {
 		console.log(value);
 		props.onChange(value);
 	}*/
+	
 	return (
 		<form onSubmit={e => e.preventDefault()} >
 			<label htmlFor="guess">Enter number 1-100</label>
@@ -13,7 +14,8 @@ export default function NumberInput(props) {
 			<input type="number" id="guess" min={1} max={100} 
 			  onChange={e => value = e.target.value} required />
 			<br />
-			<button onClick={() => props.onChange(value)}>submit</button>
+			<button onClick={() => {props.onChange(value); 
+				props.onGuess(props.guessArray, value);}}>submit</button>
 		</form>
 	);
 }

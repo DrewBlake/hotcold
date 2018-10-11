@@ -2,8 +2,15 @@ import React from 'react';
 import './hotcold-display.css'
 
 export default function HotColdDisplay(props) {
+		const guessArray = props.guessArray.map((guess, index) => (
+			<h3 key={index}>
+				{guess}
+			</h3>			
+		));
+
 		let hotCold;
 		let classHotCold;
+		//let newRandom = Math.floor((Math.random() * 100) + 1);
 		if (props.guess === "") {
 			hotCold = "";
 		}
@@ -13,7 +20,8 @@ export default function HotColdDisplay(props) {
 			return (
 				<div className="hotcold-display">
 					<h2 className={classHotCold}>{hotCold}</h2>
-					<button>Play Again</button>
+					<button onClick={() => props.onChange()}>Play Again
+					</button>
 				</div>
 			);
 		}
@@ -21,7 +29,7 @@ export default function HotColdDisplay(props) {
 			hotCold = "Freezing";
 			classHotCold = "cold";
 		}
-		else if (props.close > 20) {
+		else if (props.close >= 20) {
 			hotCold = "Cold";
 			classHotCold = "cold";
 		}
@@ -36,7 +44,9 @@ export default function HotColdDisplay(props) {
 		
 		return (
 			<div className="hotcold-display">
-				<h2 className={classHotCold}>{hotCold}</h2>
+				<h2 className={classHotCold}>{hotCold} {props.guess}</h2>
+				<h2>Your guess history:</h2> 
+				<div>{guessArray}</div>
 			</div>
 		);
 }

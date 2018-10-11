@@ -11,7 +11,8 @@ export default class GuessNumber extends React.Component {
             
             randomNum: Math.floor((Math.random() * 100) + 1),
             output: "",
-            userGuess: ""
+            userGuess: "",
+            guessArray: []
         
         }
     } 
@@ -28,7 +29,20 @@ export default class GuessNumber extends React.Component {
         });
     }
 
-    
+    resetGame() {
+        this.setState({
+            randomNum: Math.floor((Math.random() * 100) + 1),
+            output: "",
+            userGuess: "",
+            guessArray: []
+        });
+    }
+
+    updateGuessArray(guessArray, userGuess) {
+        this.setState({
+            guessArray: [...this.state.guessArray, userGuess]
+        });
+    }
 
    
     
@@ -43,15 +57,21 @@ export default class GuessNumber extends React.Component {
         const answer = this.state.randomNum;
         console.log(answer);
         console.log(this.state.userGuess);
+        console.log(this.state.guessArray);
         
         return (
             <div className="guess-number">
                 <h1>Hot Cold Number Game</h1>                
                 <NumberInput id="guess"
                   onChange={value => this.setUserGuess(value)} 
+                  onGuess={(guessArray, guess) => 
+                    this.updateGuessArray(guessArray, guess)}
                  />                
                 <HotColdDisplay text={this.state.output} close={close} 
                   guess={this.state.userGuess}
+                  onChange={() => 
+                    this.resetGame()}
+                  guessArray={this.state.guessArray}
                  />
             </div>
         );
