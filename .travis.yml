@@ -9,6 +9,6 @@ env:
 deploy:
   provider: heroku
   api_key: f524b4dd-b47d-4ab0-9330-fbec19c0b94d
-  app: hotcold
+  app: afternoon-falls-78211
   on:
     repo: DrewBlake/hotcold
