@@ -1,4 +1,5 @@
 language: node_js
+language: node_js
 node_js: node
 cache:
   directories:
@@ -7,8 +8,7 @@ env:
 - CI=true
 deploy:
   provider: heroku
-  api_key:
-    secure: jvXXJfDouRrUS7r1B8cVG4K0wG8OjwMjNkxI7ncJS7Fv2vH2gj+dtHiMoRyzXgJW+JcHpB/3ILcNyWw2uCO4EvyFXErNOkz5Sb1QErEm+BT8z7V0GLticFFWbiBd+sVBOtlxRj7Aoetu7hAQfgP2V1W2fdmLfRoU7MEt/Q9R9m0CJNtJ/DKBUkewGSm34SDbxkdD9iuExTljXt1AUR7Z1cNkBgIiPHGZ8BpnOaQbyGaxNj7z5l/bqAmB4oJY+rlcKMj/4r4YwBvEWomatjlXe+bygH96o5xDUn3FxqPLw6YY3jKyBb65XCJC9rHXCz/nagNDATXsc/xd0rOE5UToDOFRfk2TL5AbfzlMp7rqy2LQbaeI+xDI4AIuW7uartGzRUiL+/cAxecJvMElLC95Foy0oW6UhqfU+2hhnHO9RHJljqvUMq3pFBNojSZ+bfyBzofYbAS2TbZTP2BLO/UAmq3+QyTfWPaNrAil1FF2RUFCu6RHwywboImwgdm+k5WEtUZdSl+EsZXHfGLKC5XUEDK3wiOYuRDUcktxzJnUSthY3GVSgqE73pQfRod2WcVdErpItHy8PrGX6BjJxS3ORWrsamTjE335J/If3lQQROjp/KrGpk/0ETnIrxBETWkd0jwKiNSdgVAi4L6zgQpAoLtrFjkWq5vvPlXafRCVkvI=
+  api_key: f524b4dd-b47d-4ab0-9330-fbec19c0b94d
   app: hotcold
   on:
     repo: DrewBlake/hotcold
